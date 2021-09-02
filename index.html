@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Document</title>
+    <link rel="shortcut icon" href="https://iconarchive.com/download/i94991/blackvariant/button-ui-requests-2/Spotify.ico" />
+    <title>Vue Dischi</title>
     <!--ONLY SCRIPT-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -15,31 +16,42 @@
   <body>
     <div id="app">
       <header>
-        <div class="container">
-          <img src="images/logo.png" />
+        <div class="container d-flex align-i-center">
+          <img src="images/logo.png"  alt="logo"/>
+          <h1 class="text-white">Spotify</h1>
         </div>
       </header>
       <main class="container">
 
         <!--FILTER SECTION-->
         <section id="filterSection">
-          <select name="selectGenere" id="selectGenere" v-model="selectedValue">
+          <span class="text-filter">Filtra per genere</span>
+          <select 
+          name="selectGenere" 
+          id="selectGenere" 
+          v-model="selectedValue">
             <option selected value="">All</option>
-            <option v-for="genre in genres" :value="genre">{{ genre }}</option>
+            <option 
+            v-for="genre in genres" 
+            :value="genre">{{ genre }}</option>
           </select>
         </section>
-        
+        <hr>
         
         <!--ALBUM CONTAINER-->
         <section id="album-container">
-          <div class="card" v-for="album in albums" v-if="album.genre == selectedValue || selectedValue == ''">
-            <img :src="album.poster" alt="New Jersey" />
+          <div class="card" 
+          v-for="album in albums" 
+          v-if="album.genre == selectedValue || selectedValue == ''">
+            <img 
+            :src="album.poster" 
+            :alt="album.title" />
             <h2 class="title">{{ album.title }}</h2>
             <address class="author">{{ album.author }}</address>
             <time datetime="album.year" class="year">{{ album.year }}</time>
           </div>
         </section>
-      
+      <hr>
       </main>
     </div>
 

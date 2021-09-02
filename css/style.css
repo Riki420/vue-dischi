@@ -39,6 +39,30 @@ header img {
   height: 50px;
 }
 
+/* FILTER SECTION */
+
+#filterSection{
+  display: flex;
+  padding: 20px;
+}
+#selectGenere{
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0;
+  vertical-align: middle;
+
+}
+
+.text-filter{
+  color: #fff;
+  margin-right: 10px;
+  font-size: 1.2em;
+
+}
+
+
+
 /* Album */
 
 #album-container {
@@ -72,4 +96,22 @@ header img {
 }
 #album-container .card .year {
   font-size: 16px;
+}
+
+
+/*More Utility*/
+.d-flex{
+  display: flex;
+}
+.align-i-center{
+  align-items: center;
+}
+.text-white{
+  color: #fff;
+}
+
+
+#album-container .card:hover{
+  cursor: pointer;
+  background-color: #4e5f72;
 }
