@@ -24,7 +24,10 @@ const app = new Vue({
           if(!this.genres.includes(element.genre)) {
             this.genres.push(element.genre)
           }
-      })
+      });
+      this.albums.sort( function(element1, element2) {
+        return parseInt(element1.year) - parseInt(element2.year);
+      });
     });
   }
 });
